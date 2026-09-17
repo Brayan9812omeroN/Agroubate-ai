@@ -1,0 +1,223 @@
+:root {
+  --pasture-900: #223528;
+  --pasture-700: #2f4a3e;
+  --pasture-500: #46654f;
+  --wheat-500: #c9a227;
+  --wheat-300: #e4c65c;
+  --paper: #f2ede0;
+  --paper-line: #d9d0b8;
+  --ink: #26241d;
+  --ink-soft: #5b5847;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Karla", -apple-system, Segoe UI, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--pasture-900);
+  color: var(--paper);
+  padding: 4.5rem 1.5rem 3.5rem;
+}
+.hero__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.hero__place {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--wheat-300);
+  margin: 0 0 1rem;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  line-height: 1.08;
+  margin: 0 0 1.2rem;
+}
+.hero__sub {
+  font-size: 1.05rem;
+  max-width: 58ch;
+  color: #d8e0d4;
+  margin: 0;
+}
+
+/* ---------- Layout general ---------- */
+.sheet {
+  max-width: 960px;
+  margin: -1.5rem auto 0;
+  padding: 0 1.5rem 3rem;
+}
+
+.panel {
+  background: #fbf9f2;
+  border: 1px solid var(--paper-line);
+  border-radius: 4px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.panel__head {
+  padding: 1.6rem 1.8rem 0.4rem;
+  border-bottom: 1px solid var(--paper-line);
+}
+.panel__head h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 0.35rem;
+  color: var(--pasture-900);
+}
+.panel__head p {
+  color: var(--ink-soft);
+  margin: 0 0 1.4rem;
+  max-width: 60ch;
+}
+.panel__body {
+  padding: 1.6rem 1.8rem 1.9rem;
+}
+.panel__body--split {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+@media (max-width: 680px) {
+  .panel__body--split { grid-template-columns: 1fr; }
+}
+
+/* ---------- Controles ---------- */
+.controls label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+.controls select {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 3px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.ledger-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--paper-line);
+}
+.ledger-list li {
+  border-bottom: 1px solid var(--paper-line);
+}
+.ledger-list button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.7rem 0.2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.ledger-list button:hover,
+.ledger-list button:focus-visible {
+  color: var(--pasture-700);
+  text-decoration: underline;
+}
+.ledger-list button.is-active {
+  color: var(--wheat-500);
+  font-weight: 700;
+}
+.ledger-list .tipo-tag {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Resultado comparación ---------- */
+.resultado .placeholder {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.resultado h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0 0 0.2rem;
+}
+.resultado .unidad {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.ledger-table th,
+.ledger-table td {
+  text-align: left;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--paper-line);
+}
+.ledger-table th {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--pasture-900);
+  border-bottom: 2px solid var(--pasture-700);
+}
+.ledger-table tr.mejor td {
+  background: rgba(201, 162, 39, 0.14);
+  font-weight: 700;
+}
+.ledger-table tr.mejor td:first-child::before {
+  content: "★ ";
+  color: var(--wheat-500);
+}
+
+/* ---------- Destacado leche ---------- */
+.destacado {
+  border: 1px solid var(--wheat-500);
+  background: rgba(201, 162, 39, 0.1);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.destacado .etiqueta {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.3rem;
+}
+.destacado .valor {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--pasture-900);
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  text-align: center;
+  padding: 1.6rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
